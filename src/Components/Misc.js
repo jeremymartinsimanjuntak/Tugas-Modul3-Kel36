@@ -16,11 +16,13 @@ class Misc extends React.Component {
                 ['Ikan Lele', 16000],
                 ['Nasi Omlet', 12000],
                 ['Ikan Nila', 13000],
+                ['Ayam Kecap', 14000],
             ],
             menu: {
                 menu1: 0,
                 menu2: 0,
-                menu3: 0
+                menu3: 0,
+                menu4: 0
             },
             totalTagihan: 0,
         }
@@ -30,9 +32,10 @@ class Misc extends React.Component {
         const {
             menu1,
             menu2,
-            menu3
+            menu3,
+            menu4
         } = this.state.menu
-        var total = menu1 + menu2 + menu3
+        var total = menu1 + menu2 + menu3 + menu4
         this.setState ({
             ...this.state.menu,
             totalTagihan: total
@@ -56,7 +59,7 @@ class Misc extends React.Component {
     render() {
         const {
             stuff,
-            totalTagihan
+            totalTagihan,
         } = this.state
         return (
             <>
@@ -100,8 +103,20 @@ class Misc extends React.Component {
                                 })
                             }
                             </Fragment>
+                            </select><br/>
+                            <select onChange={this.handleChangeStuff} name='menu4'>
+                            <option value='0'>Makanan 4</option>
+                            <Fragment>
+                            {
+                                stuff.map(makanan => {
+                                    return (
+                                        <option value={makanan[1]}>{makanan[0]}</option>
+                                    )
+                                })
+                            }
+                            </Fragment>
                             </select>
-                            <h5>Total Belanja: Rp {totalTagihan},-</h5>
+                            <h4>Total Harga Makanan: Rp {totalTagihan},-</h4>
                         </div>
                         <h2 style={{ color: '#6e0234', textAlign: 'center', flex: '1 0 100%', margin: '10px 0' }}>
                             Silakan Bayar: Rp {totalTagihan},-

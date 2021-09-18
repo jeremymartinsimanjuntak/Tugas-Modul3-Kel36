@@ -34,7 +34,7 @@ class Dashboard extends Component {
         return (
             <div style={{ textAlign:'center', display:'flex' }}>                
                 <div style={{ width: '20%', margin:'5%' }}>
-                    <img src={Logo} style={{height:"170px", width:"120px"}} alt="Logo Kelompok 36"/>
+                    <img src={Logo} style={{height:"170px", width:"130px"}} alt="Logo Kelompok 36"/>
                     <h1 style={{ color:'#676e02' }}>Order Makanan</h1>
                 </div>
                 <div style={{ width: '20%', margin:'5%' }}>
